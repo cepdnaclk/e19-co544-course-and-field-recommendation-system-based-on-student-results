@@ -18,6 +18,6 @@ Use new file to import and preprocess data, model training and testing.
 
 Create subfolders for each different model (MLP, Regression, etc.)
 
-exmaple project file structure - https://github.com/ayush714/mlops-projects-course/tree/main
-https://www.youtube.com/watch?v=-dJPoLm_gtE&t=2009s 
+* Exmaple project file structure - https://github.com/ayush714/mlops-projects-course/tree/main
+* MLOPS youtube tutorial - https://www.youtube.com/watch?v=-dJPoLm_gtE&t=2009s 
 
