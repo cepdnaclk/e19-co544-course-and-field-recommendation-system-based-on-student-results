@@ -7,11 +7,11 @@ MLops - done by Zenml
 pip install "zenml[server]"
 
 #file structure
-/data - add dataset
-/model - create models that you are using
-/steps - steps of the development - applying models to data
-/pipeline - to store pipeline files 
-/temp - to store temporary files - codes before structuring
++ /data - add dataset
++ /model - create models that you are using
++ /steps - steps of the development - applying models to data
++ /pipeline - to store pipeline files 
++ /temp - to store temporary files - codes before structuring
 
 in model and steps - each step of the process should be in a different python file.
 Use new file to import and preprocess data, model training and testing.
