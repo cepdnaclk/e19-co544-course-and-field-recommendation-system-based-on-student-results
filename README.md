@@ -6,7 +6,7 @@ MLops - done by Zenml
 #download
 pip install "zenml[server]"
 
-file structure
+#file structure
 /data - add dataset
 /model - create models that you are using
 /steps - steps of the development - applying models to data
