@@ -24,6 +24,7 @@ def ingest_data(data_path):
         logging.info("Ingesting data")
         df = pd.read_csv(data_path)
         return df
+    
     except Exception as e:
         logging.error(e)
         raise e
