@@ -1,6 +1,6 @@
 This is The Xg Boost model for the classification :
 
 Results (25.06.2024) :
-![alt text](XgResults.png)
+![alt text](temp/XgBoost/XgResults.png)
 
 Note : This notebook can be used to train other models also
