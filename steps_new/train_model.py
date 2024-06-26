@@ -4,9 +4,12 @@ from zenml import step
 from sklearn.model_selection import train_test_split
 from xgboost import XGBClassifier
 from imblearn.over_sampling import SMOTE
+import pandas as pd
 
 @step
-def train_xgboost_for_each_target(features_encoded, targets_encoded):
+def train_xgboost_for_each_target(
+    features_encoded: pd.DataFrame, 
+    targets_encoded: pd.DataFrame) -> dict:
     """
     Args:
         features_encoded: pd.DataFrame

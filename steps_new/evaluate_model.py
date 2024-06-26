@@ -3,7 +3,7 @@ from zenml import step
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
 @step
-def evaluate_xgb(train_results):
+def evaluate_xgb(train_results: dict) -> dict:
     """
     Args:
         y_pred: np.array

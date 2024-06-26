@@ -1,14 +1,13 @@
 import logging
 from zenml import step
 import pandas as pd
-
+from typing import Annotated, Tuple
 
 def encode_grade(marks):
 
     '''Encode the marks into grades'''	
 
-# Convert scores into grades
-
+    marks = int(marks)
     if marks > 85:
         return 0  #'A+'
     elif 80 <= marks <= 85:
@@ -51,7 +50,10 @@ def merge_small_classes(target_column, threshold=4):
     return target_column
 
 @step	
-def preprocess_data(df):
+def preprocess_data(df: pd.DataFrame) -> Tuple[
+    Annotated[pd.DataFrame, "features_encoded"],
+    Annotated[pd.DataFrame, "targets_encoded"],
+]:
 
     '''
     Preprocess the data
@@ -75,9 +77,13 @@ def preprocess_data(df):
             features[col] = pd.to_numeric(features[col], errors='coerce')  # Convert to numeric, set non-numeric to NaN
             features.fillna({col: features[col].median()}, inplace=True)  # Fill NaN with median of the column
 
+        for col in targets.columns:
+            targets.fillna({col: targets[col].median()}, inplace=True)  # Fill NaN with median of the column
+
         # Apply the grade encoding function to each cell in the dataframe
         features_encoded = features.map(encode_grade)
         targets_encoded = targets.map(encode_grade)
+
 
         for column in targets_encoded.columns:
             # Merge small classes in the target column
