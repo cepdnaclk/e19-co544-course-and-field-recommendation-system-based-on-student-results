@@ -1,9 +1,12 @@
 import logging
 from zenml import step
 from sklearn.metrics import mean_squared_error
+from sklearn.linear_model._base import LinearRegression as LR
+import pandas as pd
+import numpy as np
 
 @step
-def evaluate_SVM(model, X_test, y_test):
+def evaluate_SVM(model: LR, X_test: np.ndarray, y_test: np.ndarray) -> None:
     """
     Args:
         None

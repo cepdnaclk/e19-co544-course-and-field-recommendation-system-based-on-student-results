@@ -3,9 +3,15 @@ from zenml import step
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.impute import SimpleImputer
-
+from typing import Annotated, Tuple
+import numpy as np
 @step
-def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
+def preprocess_data(df: pd.DataFrame) -> Tuple[
+    Annotated[np.ndarray, "X_train"],
+    Annotated[np.ndarray, "X_test"],
+    Annotated[np.ndarray, "y_train"],
+    Annotated[np.ndarray, "y_test"],
+]:
     """
     Args:
         df: pd.DataFrame

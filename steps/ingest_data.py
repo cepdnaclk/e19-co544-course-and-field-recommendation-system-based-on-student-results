@@ -18,7 +18,7 @@ from zenml import step
 
 
 @step
-def ingest_data(data_path):
+def ingest_data(data_path: str) -> pd.DataFrame:
 
     try:
         logging.info("Ingesting data")
